@@ -7,7 +7,7 @@
       name="description"
       content="Fengji Zhang is a PhD candidate and Qwen research intern working across data, evaluation, reinforcement learning, and model delivery for general-purpose LLM agents."
     />
-    <meta name="theme-color" content="#0b0d0c" />
+    <meta name="theme-color" content="#f4f3ee" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Fengji Zhang — LLM Agent Post-training" />
     <meta
@@ -26,17 +26,23 @@
         try {
           const saved = localStorage.getItem("theme");
           const legacy = localStorage.getItem("theme-mode");
-          const theme = saved === "light" || legacy === "light" ? "light" : "dark";
+          const theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : legacy === "light" || legacy === "dark"
+                ? legacy
+                : "light";
           document.documentElement.dataset.theme = theme;
           document.querySelector('meta[name="theme-color"]').content =
             theme === "dark" ? "#0b0d0c" : "#f4f3ee";
         } catch {
-          document.documentElement.dataset.theme = "dark";
+          document.documentElement.dataset.theme = "light";
         }
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=22" />
-    <script defer src="script.js?v=22"></script>
+    <link rel="stylesheet" href="styles.css?v=23" />
+    <script defer src="script.js?v=23"></script>
+    <script defer src="analytics.js?v=23"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -93,9 +99,9 @@
 
         <div class="header-actions">
           <a class="header-cv" href="cv.html">CV</a>
-          <button class="theme-toggle" type="button" aria-label="Switch to light theme">
-            <span class="theme-symbol" aria-hidden="true">☼</span>
-            <span class="theme-label">Light</span>
+          <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+            <span class="theme-symbol" aria-hidden="true">☾</span>
+            <span class="theme-label">Dark</span>
           </button>
           <button
             class="menu-toggle"
@@ -620,6 +626,12 @@
 
     <footer class="site-footer shell">
       <span data-content-key="profile.location">Fengji Zhang · Hong Kong · Shenzhen</span>
+      <span
+        class="visitor-stats"
+        data-visitor-stats
+        title="Aggregate site visits via GoatCounter; no cookies or stored IP addresses."
+        hidden
+      ><span data-visitor-count>—</span> site visits</span>
       <span>Last updated July 2026.</span>
     </footer>
 

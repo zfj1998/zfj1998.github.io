@@ -12,7 +12,7 @@ const toast = document.querySelector(".toast");
 let toastTimer;
 
 function currentTheme() {
-  return root.dataset.theme === "light" ? "light" : "dark";
+  return root.dataset.theme === "dark" ? "dark" : "light";
 }
 
 function updateThemeUI() {
@@ -26,7 +26,7 @@ function updateThemeUI() {
 }
 
 function setTheme(theme) {
-  const safeTheme = theme === "light" ? "light" : "dark";
+  const safeTheme = theme === "dark" ? "dark" : "light";
   root.dataset.theme = safeTheme;
   try {
     localStorage.setItem("theme", safeTheme);

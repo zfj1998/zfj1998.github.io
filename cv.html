@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Curriculum vitae of Fengji Zhang." />
-    <meta name="theme-color" content="#0b0d0c" />
+    <meta name="theme-color" content="#f5f3ee" />
     <title>CV — Fengji Zhang</title>
     <link rel="canonical" href="https://zfj1998.github.io/cv.html" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -13,23 +13,29 @@
         try {
           const saved = localStorage.getItem("theme");
           const legacy = localStorage.getItem("theme-mode");
-          const theme = saved === "light" || legacy === "light" ? "light" : "dark";
+          const theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : legacy === "light" || legacy === "dark"
+                ? legacy
+                : "light";
           document.documentElement.dataset.theme = theme;
           document.querySelector('meta[name="theme-color"]').content =
             theme === "dark" ? "#101311" : "#f5f3ee";
         } catch {
-          document.documentElement.dataset.theme = "dark";
+          document.documentElement.dataset.theme = "light";
         }
       })();
     </script>
-    <link rel="stylesheet" href="cv.css?v=22" />
-    <script defer src="cv.js?v=22"></script>
+    <link rel="stylesheet" href="cv.css?v=23" />
+    <script defer src="cv.js?v=23"></script>
+    <script defer src="analytics.js?v=23"></script>
   </head>
   <body>
     <header class="cv-toolbar">
       <a href="index.html">← Homepage</a>
       <div>
-        <button class="cv-theme" type="button" aria-label="Switch theme">Theme</button>
+        <button class="cv-theme" type="button" aria-label="Switch to dark theme">Dark theme</button>
         <button class="cv-print" type="button">Print / Save as PDF</button>
       </div>
     </header>
