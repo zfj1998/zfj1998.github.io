@@ -36,6 +36,7 @@
   --shell: min(1180px, calc(100vw - 56px));
 }
 
+html:not([data-theme]),
 html[data-theme="light"] {
   color-scheme: light;
   --bg: #f4f3ee;
@@ -1199,6 +1200,32 @@ p {
   color: var(--faint);
   font-family: var(--font-mono);
   font-size: 10px;
+}
+
+.visitor-stats {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.visitor-stats::before {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+}
+
+.visitor-stats[hidden] {
+  display: none;
+}
+
+.visitor-stats [data-visitor-count] {
+  color: var(--text);
+  font-weight: 750;
 }
 
 .citation-dialog {
