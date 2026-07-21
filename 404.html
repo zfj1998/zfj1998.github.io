@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The requested page was not found." />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0b0d0c" />
+    <title>Signal lost — Fengji Zhang</title>
+    <script>
+      try {
+        const theme = localStorage.getItem("theme") === "light" ? "light" : "dark";
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]').content =
+          theme === "light" ? "#f4f3ee" : "#0b0d0c";
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b0d0c;
+        --text: #f1f3ec;
+        --muted: #a2a99e;
+        --line: rgba(241, 243, 236, 0.15);
+        --accent: #ceff45;
+      }
+      html[data-theme="light"] {
+        color-scheme: light;
+        --bg: #f4f3ee;
+        --text: #181a18;
+        --muted: #595f58;
+        --line: rgba(24, 26, 24, 0.16);
+        --accent: #466800;
+      }
+      * { box-sizing: border-box; }
+      body {
+        display: grid;
+        min-height: 100svh;
+        margin: 0;
+        place-items: center;
+        color: var(--text);
+        background-color: var(--bg);
+        background-image:
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: 72px 72px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      main { width: min(720px, calc(100% - 40px)); }
+      span {
+        color: var(--accent);
+        font: 700 11px/1.4 "SFMono-Regular", Consolas, monospace;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+      h1 {
+        max-width: 7ch;
+        margin: 24px 0;
+        font-size: clamp(58px, 12vw, 112px);
+        font-weight: 780;
+        letter-spacing: -.065em;
+        line-height: .88;
+      }
+      p { max-width: 520px; color: var(--muted); font-size: 17px; line-height: 1.65; }
+      a {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        margin-top: 20px;
+        padding-bottom: 2px;
+        border-bottom: 1px solid var(--accent);
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <span>404 / Signal lost</span>
+      <h1>Nothing at this coordinate.</h1>
+      <p>The page you followed is not here. The rest of the map is still intact.</p>
+      <a href="/">Return to the homepage →</a>
+    </main>
+  </body>
+</html>

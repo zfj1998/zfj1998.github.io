@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Curriculum vitae of Fengji Zhang." />
+    <meta name="theme-color" content="#0b0d0c" />
+    <title>CV — Fengji Zhang</title>
+    <link rel="canonical" href="https://zfj1998.github.io/cv.html" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme");
+          const legacy = localStorage.getItem("theme-mode");
+          const theme = saved === "light" || legacy === "light" ? "light" : "dark";
+          document.documentElement.dataset.theme = theme;
+          document.querySelector('meta[name="theme-color"]').content =
+            theme === "dark" ? "#101311" : "#f5f3ee";
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="cv.css?v=22" />
+    <script defer src="cv.js?v=22"></script>
+  </head>
+  <body>
+    <header class="cv-toolbar">
+      <a href="index.html">← Homepage</a>
+      <div>
+        <button class="cv-theme" type="button" aria-label="Switch theme">Theme</button>
+        <button class="cv-print" type="button">Print / Save as PDF</button>
+      </div>
+    </header>
+
+    <main class="cv">
+      <header class="cv-heading">
+        <div>
+          <p class="kicker">Curriculum vitae · July 2026</p>
+          <h1>Fengji Zhang</h1>
+          <p class="identity">PhD candidate · Post-training for general-purpose LLM agents</p>
+        </div>
+        <address>
+          <span>fengji.zhang [at] my.cityu.edu.hk</span>
+          <button class="cv-email" type="button">Copy email</button>
+          <a href="https://github.com/zfj1998">github.com/zfj1998</a>
+          <a href="https://scholar.google.com/citations?user=plXSJ7IAAAAJ">Google Scholar · 1.7k+ citations</a>
+          <span>Hong Kong · Fall 2027 · Available Oct 2027</span>
+        </address>
+      </header>
+
+      <section class="cv-section">
+        <h2>Research profile</h2>
+        <div class="cv-content profile">
+          <p>
+            PhD candidate in Computer Science at City University of Hong Kong,
+            expecting to graduate in Fall 2027. I work on post-training for
+            general-purpose LLM agents across data, evaluation, reinforcement
+            learning, model behavior, and delivery.
+          </p>
+          <p>
+            At Alibaba Qwen, I contribute to post-training for Deep Research,
+            adaptive search, and skill use. Earlier work spans reliable search agents,
+            multimodal evaluation, repository context, and execution-guided code generation.
+          </p>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Research experience</h2>
+        <div class="cv-content entries">
+          <article>
+            <div class="entry-head">
+              <div><strong>Alibaba Qwen</strong><span>Foundation Model Team · Research Intern</span></div>
+              <time>Mar 2025 — present</time>
+            </div>
+            <ul>
+              <li>Contribute across the post-training loop for general-purpose agents: data construction and analysis, evaluation, SFT/RL teacher models, data and model consolidation, and model delivery.</li>
+              <li>Work on production-facing Deep Research, adaptive search, and skill-calling behavior, including asynchronous agent workflows.</li>
+              <li>Parallel academic explorations led to A²Search and AWA-RL.</li>
+            </ul>
+          </article>
+          <article>
+            <div class="entry-head">
+              <div><strong>01.AI</strong><span>Pretrain & Multimodal Group · Research Intern</span></div>
+              <time>Jun — Dec 2024</time>
+            </div>
+            <ul>
+              <li>Worked on Yi-VL post-training and evaluation for instruction following and visual understanding.</li>
+              <li>Developed and evaluated Yi-Coder for code generation, completion, and coding-agent settings; studied test-time scaling with long reasoning and execution feedback.</li>
+              <li>Developed HumanEval-V during this internship as a separate academic project.</li>
+            </ul>
+          </article>
+          <article>
+            <div class="entry-head">
+              <div><strong>Microsoft Research Asia</strong><span>Data, Knowledge & Intelligence · Research Intern</span></div>
+              <time>Jun 2022 — May 2023</time>
+            </div>
+            <ul>
+              <li>Proposed CodeT, using generated tests and execution agreement to improve inference-time selection for code generation.</li>
+              <li>Developed RepoCoder, an iterative retrieval-generation approach for repository-level code completion and cross-file context.</li>
+            </ul>
+          </article>
+          <article>
+            <div class="entry-head">
+              <div><strong>Tencent</strong><span>IEG</span></div>
+              <time>Jun — Sep 2019</time>
+            </div>
+            <ul><li>Developed AIOps and internal SaaS tooling for online-game operations.</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Selected papers</h2>
+        <div class="cv-content papers">
+          <article>
+            <span>Preprint · 2026</span>
+            <h3><a href="https://arxiv.org/abs/2607.10738">To Answer or to Abstain: Mitigating Search-Agent Hallucinations via Abstention-Aware Reinforcement Learning</a></h3>
+            <p><b>Fengji Zhang</b>, Tianyu Fan, Yuxiang Zheng, Xinyao Niu, Chengen Huang, Jacky Keung, Bei Chen.</p>
+            <p class="contribution">AWA-RL learns a controllable answer–abstain policy from query-specific prior capability and on-policy observations.</p>
+          </article>
+          <article>
+            <span>ICLR · 2026</span>
+            <h3><a href="https://github.com/zfj1998/A2Search">A²Search: Ambiguity-Aware Question Answering with Reinforcement Learning</a></h3>
+            <p><b>Fengji Zhang</b>, Xinyao Niu, Chengyang Ying, et al.</p>
+            <p class="contribution">Annotation-free ambiguity resolution with trajectory sampling, evidence verification, and an AnsF1 reward for multiple valid answers.</p>
+          </article>
+          <article>
+            <span>ACM TOSEM · 2026</span>
+            <h3><a href="https://doi.org/10.1145/3813804">HumanEval-V: Systematic Evaluation of Visual Reasoning in Large Multimodal Models for Code Generation</a></h3>
+            <p><b>Fengji Zhang</b>, Linquan Wu, Huiyu Bai, et al.</p>
+            <p class="contribution">A human-annotated benchmark for testing visual understanding through executable coding tasks with indispensable diagram context.</p>
+          </article>
+          <article>
+            <span>EMNLP · 2023</span>
+            <h3><a href="https://aclanthology.org/2023.emnlp-main.151/">RepoCoder: Repository-level Code Completion through Iterative Retrieval and Generation</a></h3>
+            <p><b>Fengji Zhang</b>, Bei Chen, Yue Zhang, et al.</p>
+            <p class="contribution">Iterative retrieval-generation for cross-file context; more than 10% improvement over in-file completion baselines across RepoBench settings.</p>
+          </article>
+          <article>
+            <span>ICLR · 2023</span>
+            <h3><a href="https://arxiv.org/abs/2207.10397">CodeT: Code Generation with Generated Tests</a></h3>
+            <p>Bei Chen*, <b>Fengji Zhang*</b>, Anh Nguyen*, et al.</p>
+            <p class="contribution">Generated tests and dual execution agreement for solution selection; 65.8% pass@1 on HumanEval.</p>
+          </article>
+          <p class="all-papers">
+            Additional work spans code intelligence, multimodal understanding, deep
+            research, software engineering, and responsible code generation.
+            <a href="https://scholar.google.com/citations?user=plXSJ7IAAAAJ">View the complete publication record on Google Scholar ↗</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="cv-section two-column">
+        <div>
+          <h2>Education</h2>
+          <div class="cv-content compact">
+            <p><strong>City University of Hong Kong</strong><br />PhD candidate in Computer Science · 2023–2027 expected</p>
+            <p><strong>Wuhan University</strong><br />MS in Computer Science · 2020–2023<br />BS in Computer Science · 2016–2020</p>
+          </div>
+        </div>
+        <div>
+          <h2>Service & recognition</h2>
+          <div class="cv-content compact">
+            <p><strong>Reviewer</strong><br />ICSE ’24, ICLR ’25/’26, ICML ’26, NeurIPS ’26, CVPR ’25, ICCV ’25, ACL ’25/’26, EMNLP ’26</p>
+            <p><strong>Award</strong><br />CityUHK Outstanding Academic Performance</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

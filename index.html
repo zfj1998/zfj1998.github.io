@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fengji Zhang is a PhD candidate and Qwen research intern working across data, evaluation, reinforcement learning, and model delivery for general-purpose LLM agents."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Fengji Zhang — LLM Agent Post-training" />
+    <meta
+      property="og:description"
+      content="Research on post-training for general-purpose LLM agents, spanning data, evaluation, reinforcement learning, and model delivery."
+    />
+    <meta property="og:image" content="https://zfj1998.github.io/assets/selfie.jpg" />
+    <meta property="og:image:alt" content="Portrait of Fengji Zhang" />
+    <meta property="og:url" content="https://zfj1998.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <title>Fengji Zhang — LLM Agent Post-training</title>
+    <link rel="canonical" href="https://zfj1998.github.io/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme");
+          const legacy = localStorage.getItem("theme-mode");
+          const theme = saved === "light" || legacy === "light" ? "light" : "dark";
+          document.documentElement.dataset.theme = theme;
+          document.querySelector('meta[name="theme-color"]').content =
+            theme === "dark" ? "#0b0d0c" : "#f4f3ee";
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css?v=22" />
+    <script defer src="script.js?v=22"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fengji Zhang",
+        "alternateName": "张丰基",
+        "jobTitle": "PhD Candidate and Research Intern",
+        "affiliation": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "City University of Hong Kong"
+          },
+          {
+            "@type": "Organization",
+            "name": "Alibaba Qwen"
+          }
+        ],
+        "url": "https://zfj1998.github.io/",
+        "image": "https://zfj1998.github.io/assets/selfie.jpg",
+        "sameAs": [
+          "https://github.com/zfj1998",
+          "https://scholar.google.com/citations?user=plXSJ7IAAAAJ",
+          "https://www.linkedin.com/in/fengji-zhang-365882281/",
+          "https://x.com/fengjizhang98",
+          "https://www.xiaohongshu.com/user/profile/5cb2a385000000001002ee8d"
+        ],
+        "knowsAbout": [
+          "Large language model post-training",
+          "LLM agents",
+          "Reinforcement learning",
+          "Model evaluation",
+          "Code intelligence",
+          "Multimodal reasoning"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner shell">
+        <a class="header-name" href="#top" aria-label="Back to top">
+          <span>FZ</span><span class="header-name-cn">张丰基</span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="#news">News</a>
+          <a href="#publications">Publications</a>
+          <a href="#internships">Internships</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-cv" href="cv.html">CV</a>
+          <button class="theme-toggle" type="button" aria-label="Switch to light theme">
+            <span class="theme-symbol" aria-hidden="true">☼</span>
+            <span class="theme-label">Light</span>
+          </button>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >Menu</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="hero shell" id="top" tabindex="-1">
+        <div class="hero-identity">
+          <figure class="portrait-frame" data-content-key="profile.portrait">
+            <img
+              src="assets/selfie.jpg"
+              width="857"
+              height="1280"
+              alt="Portrait of Fengji Zhang"
+              fetchpriority="high"
+            />
+          </figure>
+
+          <div class="name-block">
+            <p class="name" data-content-key="profile.display_name">
+              Fengji Zhang <span lang="zh-CN">张丰基</span>
+            </p>
+            <p class="pronunciation">Pronounced /fʌŋ dʒiː dʒɑːŋ/</p>
+          </div>
+
+          <div class="identity-links" aria-label="Profile links">
+            <button class="text-action email-action" type="button">
+              Email <span aria-hidden="true">↗</span>
+            </button>
+            <a href="https://scholar.google.com/citations?user=plXSJ7IAAAAJ">Scholar <span>↗</span></a>
+            <a href="https://github.com/zfj1998">GitHub <span>↗</span></a>
+            <a class="identity-secondary" href="https://www.linkedin.com/in/fengji-zhang-365882281/">LinkedIn <span>↗</span></a>
+            <a class="identity-secondary" href="https://x.com/fengjizhang98">X <span>↗</span></a>
+            <a class="identity-secondary" href="https://www.xiaohongshu.com/user/profile/5cb2a385000000001002ee8d" aria-label="Xiaohongshu">XHS <span>↗</span></a>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <h1 data-content-key="hero.headline">
+            I work on <span class="no-break">post-training</span> for
+            <span class="no-break">general-purpose</span> LLM agents.
+          </h1>
+          <p class="hero-lead" data-content-key="hero.summary">
+            I train and evaluate LLM agents that search, write code, and use tools.
+            My work ranges from data construction and reinforcement learning to model
+            consolidation and delivery.
+          </p>
+
+          <div class="career-signal" data-content-key="career.search_status">
+            <span class="signal-state"><i aria-hidden="true"></i>Actively looking</span>
+            <p>
+              LLM post-training roles · Available October 2027<br />
+              <span>Mainland China · Hong Kong · Singapore</span>
+            </p>
+          </div>
+
+          <div class="affiliations" aria-label="Current affiliations">
+            <article>
+              <span class="affiliation-mark">01</span>
+              <div>
+                <p>PhD Candidate</p>
+                <h2>City University of Hong Kong</h2>
+                <span>
+                  Advised by
+                  <a href="https://scholars.cityu.edu.hk/en/persons/jwkeung/">Jacky Keung ↗</a>
+                </span>
+              </div>
+            </article>
+            <article data-content-key="experience.qwen.public_scope">
+              <span class="affiliation-mark">02</span>
+              <div>
+                <p>Research Intern</p>
+                <h2>Qwen Foundation Model Team</h2>
+                <span>Post-training for agents, including search and skill use</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="proof-line">
+            <a
+              href="https://scholar.google.com/citations?user=plXSJ7IAAAAJ"
+              data-content-key="proof.scholar_citations"
+              data-content-status="needs-refresh"
+            ><strong>1.7k+</strong> citations <span>as of Jul 2026 ↗</span></a>
+            <p><span>Internships at</span> Qwen · 01.AI · Microsoft Research Asia</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="news shell" id="news" tabindex="-1" aria-labelledby="news-title">
+        <div class="news-heading">
+          <p class="section-code">NOW</p>
+          <h2 id="news-title">News</h2>
+        </div>
+        <ol class="news-list">
+          <li>
+            <time datetime="2026-07">2026.07</time>
+            <p>
+              Released the <a href="https://arxiv.org/abs/2607.10738">AWA-RL preprint</a>
+              and accompanying <a href="https://github.com/zfj1998/AWA-RL">code</a>.
+            </p>
+          </li>
+          <li>
+            <time datetime="2026-07">2026.07</time>
+            <p>
+              <a href="https://docs.qwencloud.com/token-plan/personal/token-plan-personal-overview">Qwen3.8-Max-Preview</a>
+              is now available.
+            </p>
+          </li>
+          <li>
+            <time datetime="2026-04">2026.04</time>
+            <p>
+              <a href="https://arxiv.org/abs/2510.07958">A²Search</a> was published
+              at ICLR 2026 in Rio de Janeiro.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="page-section shell" id="publications" tabindex="-1">
+        <header class="section-heading">
+          <div class="section-title">
+            <p class="section-code">01 / Publications</p>
+            <h2>Research across code, search, evaluation, and post-training.</h2>
+          </div>
+        </header>
+
+        <div class="publication-list">
+          <article class="publication-entry" data-content-key="work.awa.public">
+            <p class="publication-index" aria-hidden="true">01</p>
+            <a class="publication-visual" href="https://arxiv.org/abs/2607.10738" aria-label="Open AWA-RL paper">
+              <img
+                src="assets/publications/awa-figure.png"
+                width="1245"
+                height="375"
+                alt="AWA-RL training dynamics showing controllable abstention behavior"
+                loading="lazy"
+              />
+              <span>Figure ↗</span>
+            </a>
+            <div class="publication-body">
+              <div class="publication-meta">
+                <span data-content-key="work.awa.status">Preprint · 2026</span>
+                <span>LLM agents · Reinforcement learning</span>
+              </div>
+              <h3>To Answer or to Abstain: Mitigating Search-Agent Hallucinations via Abstention-Aware Reinforcement Learning</h3>
+              <p class="publication-authors">
+                <strong>Fengji Zhang</strong>, Tianyu Fan, Yuxiang Zheng, Xinyao Niu,
+                Chengen Huang, Jacky Keung, Bei Chen
+              </p>
+              <p class="publication-method">
+                AWA-RL adjusts abstention rewards using a query-specific estimate of the
+                model’s prior capability and the policy’s behavior during training.
+              </p>
+              <p class="publication-finding">
+                <span>Finding</span>
+                When retrieval fails, the better response may be to abstain rather than guess.
+                AWA-RL improves this behavior while preserving the ability to answer when
+                the available evidence is sufficient.
+              </p>
+              <div class="publication-actions">
+                <a href="https://arxiv.org/abs/2607.10738">Paper ↗</a>
+                <a href="https://github.com/zfj1998/AWA-RL">Code ↗</a>
+                <button type="button" class="cite-button" data-cite-key="awa">BibTeX</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-entry">
+            <p class="publication-index" aria-hidden="true">02</p>
+            <a class="publication-visual" href="https://arxiv.org/abs/2510.07958" aria-label="Open A-squared Search paper">
+              <img
+                src="assets/publications/a2search-case.png"
+                width="3483"
+                height="1743"
+                alt="A-squared Search example resolving two evidence-supported answers in one trajectory"
+                loading="lazy"
+              />
+              <span>Figure ↗</span>
+            </a>
+            <div class="publication-body">
+              <div class="publication-meta">
+                <span>ICLR · 2026</span>
+                <span>Search agents · Ambiguity</span>
+              </div>
+              <h3>A²Search: Ambiguity-Aware Question Answering with Reinforcement Learning</h3>
+              <p class="publication-authors">
+                <strong>Fengji Zhang</strong>, Xinyao Niu, Chengyang Ying, Guancheng Lin,
+                Zhongkai Hao, Zhou Fan, Chengen Huang, Jacky Keung, Bei Chen, Junyang Lin
+              </p>
+              <p class="publication-method">
+                A²Search turns evidence-verified alternative answers into annotation-free
+                training data and uses an AnsF1 reward to train the agent to recover multiple
+                valid interpretations in one trajectory.
+              </p>
+              <p class="publication-finding">
+                <span>Finding</span>
+                For an ambiguous question, A²Search can return multiple evidence-supported
+                answers in a single trajectory rather than committing to one interpretation.
+              </p>
+              <div class="publication-actions">
+                <a href="https://arxiv.org/abs/2510.07958">Paper ↗</a>
+                <a href="https://github.com/zfj1998/A2Search">Code ↗</a>
+                <button type="button" class="cite-button" data-cite-key="a2search">BibTeX</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-entry">
+            <p class="publication-index" aria-hidden="true">03</p>
+            <a class="publication-visual" href="https://humaneval-v.github.io/" aria-label="Open HumanEval-V project page">
+              <img
+                src="assets/publications/humaneval-v-task.png"
+                width="3091"
+                height="1406"
+                alt="HumanEval-V task where a diagram specifies a matrix transformation to implement in code"
+                loading="lazy"
+              />
+              <span>Benchmark example ↗</span>
+            </a>
+            <div class="publication-body">
+              <div class="publication-meta">
+                <span>ACM TOSEM · 2026</span>
+                <span>Multimodal evaluation · Code</span>
+              </div>
+              <h3>HumanEval-V: Systematic Evaluation of Visual Reasoning in Large Multimodal Models for Code Generation</h3>
+              <p class="publication-authors">
+                <strong>Fengji Zhang</strong>, Linquan Wu, Huiyu Bai, Guancheng Lin,
+                Xiao Li, Xiao Yu, Yue Wang, Bei Chen, Jacky Keung
+              </p>
+              <p class="publication-method">
+                Human-authored tasks make visual information essential to the specification,
+                while executable tests check whether models can turn that information into
+                correct code.
+              </p>
+              <p class="publication-finding">
+                <span>Finding</span>
+                Strong multimodal models still struggle with visual patterns that people find
+                simple. Describing a diagram and converting it into correct code remain distinct
+                challenges.
+              </p>
+              <p class="external-signal">
+                HumanEval-V was used as an evaluation benchmark in the
+                <a href="https://arxiv.org/abs/2601.09668">Step3-VL-10B technical report ↗</a>
+              </p>
+              <div class="publication-actions">
+                <a href="https://doi.org/10.1145/3813804">Paper ↗</a>
+                <a href="https://humaneval-v.github.io/">Project ↗</a>
+                <a href="https://github.com/HumanEval-V/HumanEval-V-Benchmark">Code ↗</a>
+                <button type="button" class="cite-button" data-cite-key="humanevalv">BibTeX</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-entry">
+            <p class="publication-index" aria-hidden="true">04</p>
+            <a class="publication-visual" href="https://aclanthology.org/2023.emnlp-main.151/" aria-label="Open RepoCoder paper">
+              <img
+                src="assets/publications/repocoder-figure.png"
+                width="726"
+                height="600"
+                alt="RepoCoder diagram comparing in-file completion, one-shot retrieval, and iterative retrieval-generation"
+                loading="lazy"
+              />
+              <span>Figure ↗</span>
+            </a>
+            <div class="publication-body">
+              <div class="publication-meta">
+                <span>EMNLP · 2023</span>
+                <span>Repository context · Code</span>
+              </div>
+              <h3>RepoCoder: Repository-Level Code Completion Through Iterative Retrieval and Generation</h3>
+              <p class="publication-authors">
+                <strong>Fengji Zhang</strong>, Bei Chen, Yue Zhang, Jacky Keung, Jin Liu,
+                Daoguang Zan, Yi Mao, Jian-Guang Lou, Weizhu Chen
+              </p>
+              <p class="publication-method">
+                RepoCoder alternates between retrieval and generation, using each partial
+                completion to improve the next search for cross-file context.
+              </p>
+              <p class="publication-finding">
+                <span>Finding</span>
+                The relevant repository context is not always found in a single search. A partial
+                completion can help retrieve better context in the next iteration.
+              </p>
+              <p class="external-signal">
+                <a href="https://news.ycombinator.com/item?id=35297729">Hacker News discussion ↗</a>
+              </p>
+              <div class="publication-actions">
+                <a href="https://aclanthology.org/2023.emnlp-main.151/">Paper ↗</a>
+                <a href="https://github.com/microsoft/CodeT/tree/main/RepoCoder">Code ↗</a>
+                <button type="button" class="cite-button" data-cite-key="repocoder">BibTeX</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-entry">
+            <p class="publication-index" aria-hidden="true">05</p>
+            <a class="publication-visual" href="https://openreview.net/forum?id=ktrw68Cmu9c" aria-label="Open CodeT paper">
+              <img
+                src="assets/publications/codet-figure.png"
+                width="924"
+                height="339"
+                alt="CodeT pipeline generating candidate programs and tests before selecting by execution agreement"
+                loading="lazy"
+              />
+              <span>Figure ↗</span>
+            </a>
+            <div class="publication-body">
+              <div class="publication-meta">
+                <span>ICLR · 2023</span>
+                <span>Test-time compute · Code</span>
+              </div>
+              <h3>CodeT: Code Generation with Generated Tests</h3>
+              <p class="publication-authors">
+                Bei Chen*, <strong>Fengji Zhang*</strong>, Anh Nguyen*, Daoguang Zan,
+                Zeqi Lin, Jian-Guang Lou, Weizhu Chen · *Equal contribution
+              </p>
+              <p class="publication-method">
+                CodeT uses the same model to generate candidate programs and tests, then ranks
+                the programs using dual execution agreement rather than model likelihood alone.
+              </p>
+              <p class="publication-finding">
+                <span>Finding</span>
+                Generated tests provide execution evidence for selecting among sampled programs,
+                making test-time sampling more effective.
+              </p>
+              <p class="external-signal">
+                The <a href="https://cdn.openai.com/papers/gpt-4.pdf">GPT-4 Technical Report ↗</a>
+                includes CodeT + GPT-3.5 as a HumanEval comparison baseline.
+              </p>
+              <div class="publication-actions">
+                <a href="https://openreview.net/forum?id=ktrw68Cmu9c">Paper ↗</a>
+                <a href="https://github.com/microsoft/CodeT/tree/main/CodeT">Code ↗</a>
+                <button type="button" class="cite-button" data-cite-key="codet">BibTeX</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <a class="all-work-link" href="https://scholar.google.com/citations?user=plXSJ7IAAAAJ">
+          View all publications on Google Scholar <span>↗</span>
+        </a>
+      </section>
+
+      <section class="page-section shell" id="internships" tabindex="-1" aria-labelledby="internships-title">
+        <header class="section-heading">
+          <div class="section-title">
+            <h2 class="section-code" id="internships-title">02 / Internships</h2>
+          </div>
+          <p class="section-intro">
+            My internship work has covered data construction, evaluation, model training,
+            behavior analysis, and model delivery.
+          </p>
+        </header>
+
+        <div class="internship-list">
+          <article class="internship" data-content-key="experience.qwen.summary">
+            <div class="internship-org">
+              <span class="org-mark">QW</span>
+              <div><h3>Qwen</h3><p>Foundation Model Team</p></div>
+            </div>
+            <div class="internship-role">
+              <p>Research Intern</p>
+              <time data-content-key="experience.qwen.period">Mar 2025 — Present</time>
+            </div>
+            <div class="internship-detail">
+              <p>
+                I work across the post-training pipeline for general-purpose agents, including
+                data construction and analysis, evaluation, SFT/RL teacher-model training,
+                data and model consolidation, and production-facing agent workflows.
+              </p>
+              <p>
+                My current work includes Deep Research, adaptive search, and skill calling.
+                Separate academic work during this period includes A²Search and AWA-RL.
+              </p>
+            </div>
+          </article>
+
+          <article class="internship">
+            <div class="internship-org">
+              <span class="org-mark">01</span>
+              <div><h3>01.AI</h3><p>Pretrain & Multimodal</p></div>
+            </div>
+            <div class="internship-role">
+              <p>Research Intern</p>
+              <time>Jun — Dec 2024</time>
+            </div>
+            <div class="internship-detail">
+              <p>
+                I worked on post-training and evaluation for Yi-VL, developed and evaluated
+                Yi-Coder, and studied test-time scaling with execution feedback for code generation.
+              </p>
+              <p>I also developed HumanEval-V as a separate academic project during this internship.</p>
+            </div>
+          </article>
+
+          <article class="internship">
+            <div class="internship-org">
+              <span class="org-mark">MS</span>
+              <div><h3>Microsoft Research Asia</h3><p>Data, Knowledge & Intelligence</p></div>
+            </div>
+            <div class="internship-role">
+              <p>Research Intern</p>
+              <time>Jun 2022 — May 2023</time>
+            </div>
+            <div class="internship-detail">
+              <p>
+                I proposed CodeT, which uses generated tests for solution selection, and developed
+                RepoCoder, which retrieves cross-file context iteratively for repository-level completion.
+              </p>
+            </div>
+          </article>
+
+          <article class="internship">
+            <div class="internship-org">
+              <span class="org-mark">TX</span>
+              <div><h3>Tencent</h3><p>Interactive Entertainment Group</p></div>
+            </div>
+            <div class="internship-role">
+              <p>Engineering Intern</p>
+              <time>Jun — Sep 2019</time>
+            </div>
+            <div class="internship-detail">
+              <p>
+                I developed AIOps and internal SaaS tools for online game operations. This was
+                my first experience building systems that had to remain reliable in production.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="page-section about shell"
+        id="about"
+        tabindex="-1"
+        aria-labelledby="about-title"
+        data-content-key="about.public"
+      >
+        <header class="section-heading">
+          <div class="section-title">
+            <h2 class="section-code" id="about-title">03 / Beyond research</h2>
+          </div>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p class="about-life">
+              I grew up in Nanyang, a small city in central China.
+              Outside work, I like exploring unfamiliar neighborhoods on foot or by bike.
+            </p>
+            <p class="about-belief">
+              I believe AGI will arrive, so I care about how capable models are used, not only
+              what they can do. I try to stay curious, change my mind when the evidence changes,
+              and be generous without expecting an immediate return.
+            </p>
+          </div>
+          <div class="off-hours" aria-label="Books, films, music, and hobbies">
+            <article class="interest interest-reading">
+              <p class="interest-label"><span>01</span> Reading</p>
+              <p><i>One Hundred Years of Solitude</i>, <i>To Live</i>, and Isaac Asimov’s <i>Foundation</i> series</p>
+            </article>
+            <article class="interest interest-watching">
+              <p class="interest-label"><span>02</span> Watching</p>
+              <p><i>The Godfather</i>, <i>2001: A Space Odyssey</i>, <i>The Mandalorian</i>, <i>Before Sunrise</i>, <i>One Piece</i>, and <i>The Lord of the Rings</i></p>
+            </article>
+            <article class="interest interest-listening">
+              <p class="interest-label"><span>03</span> Listening</p>
+              <p>Ludovico Einaudi, Debussy, AURORA, Cheer Chen, the Eagles, and Bandari</p>
+            </article>
+            <article class="interest interest-time-off">
+              <p class="interest-label"><span>04</span> Time off</p>
+              <p>Cycling, cooking, looking for good food, and exploring side streets</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="academic-service shell" aria-labelledby="service-title">
+        <p class="section-code">Academic service</p>
+        <div>
+          <h2 id="service-title">Peer reviewer</h2>
+          <p>ICSE ’24 · ICLR ’25/’26 · ICML ’26 · NeurIPS ’26 · CVPR ’25 · ICCV ’25 · ACL ’25/’26 · EMNLP ’26</p>
+        </div>
+      </section>
+
+      <section class="contact shell" id="contact" tabindex="-1" aria-labelledby="contact-title">
+        <p class="section-code">04 / Contact</p>
+        <div class="contact-grid">
+          <div>
+            <h2 id="contact-title">
+              Open to LLM <span class="no-break">post-training</span> roles.
+            </h2>
+            <p data-content-key="contact.intent">
+              I will be available from October 2027 and am seeking roles in mainland China,
+              Hong Kong, or Singapore. I also welcome paper discussions, collaboration inquiries
+              from students and peers, and conversations with potential co-founders.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <p class="obfuscated-email" data-content-key="contact.public_email">
+              fengji.zhang <span>[at]</span> my.cityu.edu.hk
+            </p>
+            <button class="primary-action email-action" type="button">Copy email</button>
+            <div class="contact-socials">
+              <a href="https://www.linkedin.com/in/fengji-zhang-365882281/">LinkedIn ↗</a>
+              <a href="https://x.com/fengjizhang98">X ↗</a>
+              <a href="https://www.xiaohongshu.com/user/profile/5cb2a385000000001002ee8d">Xiaohongshu ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <span data-content-key="profile.location">Fengji Zhang · Hong Kong · Shenzhen</span>
+      <span>Last updated July 2026.</span>
+    </footer>
+
+    <dialog class="citation-dialog" id="citation-dialog" aria-labelledby="citation-title">
+      <div class="dialog-head">
+        <div>
+          <p class="section-code">BibTeX</p>
+          <h2 id="citation-title">Citation</h2>
+        </div>
+        <button class="dialog-close" type="button" aria-label="Close citation dialog">Close</button>
+      </div>
+      <pre><code id="citation-code"></code></pre>
+      <button class="primary-action citation-copy" type="button">Copy BibTeX</button>
+    </dialog>
+
+    <p class="toast" role="status" aria-live="polite" aria-atomic="true"></p>
+  </body>
+</html>
