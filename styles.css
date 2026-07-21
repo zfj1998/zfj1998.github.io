@@ -1223,10 +1223,6 @@ p {
   content: "";
 }
 
-.visitor-stats[hidden] {
-  display: none;
-}
-
 .visitor-stats [data-visitor-count] {
   color: var(--text);
   font-weight: 750;

@@ -1,6 +1,6 @@
 (() => {
-  // GoatCounter site codes are public configuration, not credentials. Create the
-  // site manually, then place its short code here (for example: "zfj1998").
+  // GoatCounter supplies private aggregate location reports. Busuanzi supplies
+  // the public visitor and page-view totals shown in the footer.
   const GOATCOUNTER_SITE_CODE = "zfj1998";
   const PRODUCTION_HOSTS = new Set(["zfj1998.github.io"]);
 
@@ -21,24 +21,8 @@
   tracker.integrity = "sha384-QGgNMMRFTi8ul5kHJ+vXysPe8gySvSA/Y3rpXZiRLzKPIw8CWY+a3ObKmQsyDr+a";
   document.head.append(tracker);
 
-  const visitorStats = document.querySelector("[data-visitor-stats]");
-  const visitorCount = visitorStats?.querySelector("[data-visitor-count]");
-  if (!visitorStats || !visitorCount) return;
-
-  fetch(`${analyticsOrigin}/counter/TOTAL.json`, {
-    credentials: "omit",
-    mode: "cors",
-  })
-    .then((response) => {
-      if (!response.ok) throw new Error(`Visitor count request failed: ${response.status}`);
-      return response.json();
-    })
-    .then((data) => {
-      if (typeof data.count !== "string" || !data.count.trim()) return;
-      visitorCount.textContent = data.count;
-      visitorStats.hidden = false;
-    })
-    .catch(() => {
-      // Analytics must never make the homepage feel broken.
-    });
+  const publicCounter = document.createElement("script");
+  publicCounter.async = true;
+  publicCounter.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
+  document.head.append(publicCounter);
 })();
