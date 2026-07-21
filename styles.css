@@ -126,6 +126,10 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
+main [tabindex="-1"]:focus {
+  outline: none;
+}
+
 ::selection {
   color: var(--accent-ink);
   background: var(--accent);

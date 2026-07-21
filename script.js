@@ -84,10 +84,19 @@ menuToggle.addEventListener("click", () => {
 });
 
 navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (event) => {
     const target = document.querySelector(link.hash);
+    if (!target) return;
+
+    event.preventDefault();
     toggleMenu(false);
-    requestAnimationFrame(() => target?.focus({ preventScroll: true }));
+    target.focus({ preventScroll: true });
+    target.scrollIntoView({
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start",
+    });
+    history.pushState(null, "", link.hash);
+    scheduleActiveSectionUpdate();
   });
 });
 
@@ -103,27 +112,44 @@ document.addEventListener("keydown", (event) => {
 const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
+let activeSectionFrame;
 
-if ("IntersectionObserver" in window) {
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      const current = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (!current) return;
-
-      navLinks.forEach((link) => {
-        const active = link.getAttribute("href") === `#${current.target.id}`;
-        link.classList.toggle("active", active);
-        if (active) link.setAttribute("aria-current", "location");
-        else link.removeAttribute("aria-current");
-      });
-    },
-    { rootMargin: "-18% 0px -68% 0px", threshold: [0, 0.2, 0.55] }
-  );
-
-  sections.forEach((section) => sectionObserver.observe(section));
+function setActiveNavigation(section) {
+  navLinks.forEach((link) => {
+    const active = section && link.getAttribute("href") === `#${section.id}`;
+    link.classList.toggle("active", Boolean(active));
+    if (active) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
 }
+
+function updateActiveSection() {
+  activeSectionFrame = undefined;
+  const documentHeight = document.documentElement.scrollHeight;
+  const atPageEnd = window.scrollY + window.innerHeight >= documentHeight - 2;
+  const headerHeight = document.querySelector(".site-header")?.offsetHeight || 64;
+  const activationLine = headerHeight + Math.min(window.innerHeight * 0.2, 160);
+  let current = atPageEnd ? sections.at(-1) : null;
+
+  if (!current) {
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top > activationLine) break;
+      current = section;
+    }
+  }
+
+  setActiveNavigation(current);
+}
+
+function scheduleActiveSectionUpdate() {
+  if (activeSectionFrame !== undefined) return;
+  activeSectionFrame = requestAnimationFrame(updateActiveSection);
+}
+
+window.addEventListener("scroll", scheduleActiveSectionUpdate, { passive: true });
+window.addEventListener("resize", scheduleActiveSectionUpdate);
+window.addEventListener("load", scheduleActiveSectionUpdate);
+scheduleActiveSectionUpdate();
 
 const email = ["fengji", ".", "zhang", String.fromCharCode(64), "my", ".", "cityu", ".", "edu", ".", "hk"].join("");
 document.querySelectorAll(".email-action").forEach((button) => {
