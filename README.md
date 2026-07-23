@@ -29,8 +29,9 @@ The GoatCounter site code is configured as `zfj1998` in `analytics.js`. It is a
 public site identifier, not a credential. GoatCounter remains the private source
 for aggregate country and region reports.
 
-The public footer uses the same Busuanzi 2.3 counter as HumanEval-V and displays
-site visitors and page views. Tracking only loads on `zfj1998.github.io`;
-localhost and preview hosts are ignored. GoatCounter does not store raw IP
-addresses or add browser cookies; Busuanzi may set its own third-party
-`busuanziId` cookie when collecting the public counts.
+The public footer uses Busuanzi.cc 3.6.9 and displays site visitors and page
+views. Tracking only loads on `zfj1998.github.io`; localhost and preview hosts
+are ignored. GoatCounter does not store raw IP addresses or add browser cookies.
+Busuanzi.cc receives the page URL and referrer and may collect visit records for
+statistics, analysis, and display. Its totals are independent from the legacy
+Busuanzi service, so the public series restarts when changing providers.
