@@ -166,6 +166,7 @@ const citations = {
   eprint={2607.10738},
   archivePrefix={arXiv},
   primaryClass={cs.LG},
+  note={Accepted to EMNLP 2026},
   url={https://arxiv.org/abs/2607.10738}
 }`,
   },
