@@ -40,7 +40,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=26" />
+    <link rel="stylesheet" href="styles.css?v=27" />
     <script defer src="script.js?v=26"></script>
     <script defer src="analytics.js?v=25"></script>
     <script type="application/ld+json">
@@ -93,6 +93,7 @@
           <a href="#news">News</a>
           <a href="#publications">Publications</a>
           <a href="#internships">Internships</a>
+          <a href="#models">Models</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -192,7 +193,7 @@
               href="https://scholar.google.com/citations?user=plXSJ7IAAAAJ"
               data-content-key="proof.scholar_citations"
               data-content-status="needs-refresh"
-            ><strong>1.9k+</strong> citations <span>as of Aug 2026 ↗</span></a>
+            ><strong>2k+</strong> citations <span>as of Sep 2026 ↗</span></a>
             <p><span>Internships at</span> Qwen · 01.AI · Microsoft Research Asia</p>
           </div>
         </div>
@@ -549,6 +550,93 @@
         </div>
       </section>
 
+      <section class="page-section model-work shell" id="models" tabindex="-1" aria-labelledby="models-title">
+        <header class="section-heading">
+          <div class="section-title">
+            <h2 class="section-code" id="models-title">03 / Model work</h2>
+          </div>
+          <p class="section-intro">
+            Selected model families I helped develop across two foundation-model teams.
+          </p>
+        </header>
+
+        <div class="model-family-list">
+          <article class="model-family">
+            <a
+              class="model-family-visual model-family-visual-qwen"
+              href="https://qwen.ai/blog?id=qwen3.8"
+              aria-label="Read the official Qwen3.8 release blog"
+            >
+              <img
+                src="assets/models/qwen.svg"
+                width="512"
+                height="512"
+                alt="Qwen logo"
+                loading="lazy"
+              />
+              <span>Qwen3.7 <i>/</i> Qwen3.8</span>
+            </a>
+            <div class="model-family-body">
+              <div class="model-family-meta">
+                <span>Qwen</span>
+                <span>Agent post-training</span>
+              </div>
+              <h3>Qwen3.7 &amp; Qwen3.8</h3>
+              <p>
+                I contributed to Deep Research, general search, and skill-use capabilities
+                across both model generations. My work covered evaluation and data development,
+                as well as supervised fine-tuning and reinforcement-learning-based fine-tuning.
+              </p>
+              <div class="model-family-tags" aria-label="Qwen contribution areas">
+                <span>Deep Research</span><span>General search</span><span>Skills</span>
+                <span>Evaluation</span><span>Data</span><span>SFT</span><span>RL</span>
+              </div>
+              <div class="model-family-links">
+                <a href="https://qwen.ai/blog?id=qwen3.8">Qwen3.8 tech blog ↗</a>
+                <a href="https://arxiv.org/abs/2608.30320">Architecture paper ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="model-family">
+            <a
+              class="model-family-visual model-family-visual-yi"
+              href="https://arxiv.org/abs/2403.04652"
+              aria-label="Read the Yi technical report"
+            >
+              <img
+                src="assets/models/yi.svg"
+                width="600"
+                height="600"
+                alt="Yi logo"
+                loading="lazy"
+              />
+              <span>Yi-VL <i>/</i> Yi-Coder</span>
+            </a>
+            <div class="model-family-body">
+              <div class="model-family-meta">
+                <span>01.AI</span>
+                <span>Multimodal &amp; code models</span>
+              </div>
+              <h3>Yi-VL &amp; Yi-Coder</h3>
+              <p>
+                For Yi-VL, I synthesized vision-language instruction pairs. For Yi-Coder,
+                I cleaned pretraining data, identified harder programming problems, and built
+                chain-of-thought supervised fine-tuning data.
+              </p>
+              <div class="model-family-tags" aria-label="Yi contribution areas">
+                <span>Vision-language data</span><span>Pretraining data</span>
+                <span>Difficulty mining</span><span>CoT SFT</span>
+              </div>
+              <div class="model-family-links">
+                <a href="https://arxiv.org/abs/2403.04652">Yi technical report ↗</a>
+                <a href="https://huggingface.co/blog/lorinma/yi-coder">Yi-Coder tech blog ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section
         class="page-section about shell"
         id="about"
@@ -558,7 +646,7 @@
       >
         <header class="section-heading">
           <div class="section-title">
-            <h2 class="section-code" id="about-title">03 / Beyond research</h2>
+            <h2 class="section-code" id="about-title">04 / Beyond research</h2>
           </div>
         </header>
 
@@ -604,7 +692,7 @@
       </section>
 
       <section class="contact shell" id="contact" tabindex="-1" aria-labelledby="contact-title">
-        <p class="section-code">04 / Contact</p>
+        <p class="section-code">05 / Contact</p>
         <div class="contact-grid">
           <div>
             <h2 id="contact-title">
@@ -643,7 +731,7 @@
           <span><span id="busuanzi_site_pv" data-visitor-count>—</span> views</span>
         </span>
       </span>
-      <span>Last updated July 2026.</span>
+      <span>Last updated September 2026.</span>
     </footer>
 
     <dialog class="citation-dialog" id="citation-dialog" aria-labelledby="citation-title">

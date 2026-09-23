@@ -990,6 +990,187 @@ p {
   margin-top: 10px;
 }
 
+.model-work {
+  padding-block: 64px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.model-work .section-heading {
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 42px;
+  align-items: start;
+  margin-bottom: 28px;
+}
+
+.model-family-list {
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.model-family {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.55fr);
+  gap: clamp(28px, 4vw, 54px);
+  padding-block: 30px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.model-family-visual {
+  position: relative;
+  display: grid;
+  min-height: 246px;
+  place-items: center;
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  isolation: isolate;
+}
+
+.model-family-visual::before,
+.model-family-visual::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+}
+
+.model-family-visual::before {
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.13), transparent 42%),
+    repeating-linear-gradient(90deg, transparent 0 31px, rgba(255, 255, 255, 0.08) 31px 32px);
+}
+
+.model-family-visual::after {
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.model-family-visual-qwen {
+  background: radial-gradient(circle at 68% 28%, #745cff, transparent 38%), #17204e;
+}
+
+.model-family-visual-yi {
+  background: radial-gradient(circle at 72% 24%, #19a866, transparent 38%), #003425;
+}
+
+.model-family-visual img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 112px;
+  height: 112px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+  transition: transform 180ms ease;
+}
+
+.model-family-visual:hover img {
+  transform: scale(1.04);
+}
+
+.model-family-visual > span {
+  position: absolute;
+  z-index: 2;
+  right: 16px;
+  bottom: 14px;
+  left: 16px;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.model-family-visual > span i {
+  padding-inline: 5px;
+  color: rgba(255, 255, 255, 0.58);
+  font-style: normal;
+}
+
+.model-family-body {
+  align-self: center;
+}
+
+.model-family-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  color: var(--faint);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.model-family-meta span:first-child {
+  color: var(--accent);
+}
+
+.model-family-body h3 {
+  margin: 10px 0 0;
+  font-size: clamp(23px, 2.4vw, 32px);
+  font-weight: 740;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.model-family-body > p {
+  max-width: 66ch;
+  margin: 15px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.68;
+}
+
+.model-family-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.model-family-tags span {
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  color: var(--faint);
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.model-family-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 17px;
+}
+
+.model-family-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.model-family-links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 .about {
   padding-block: 64px;
   border-top: 1px solid var(--line-strong);
@@ -1494,6 +1675,11 @@ p {
     gap: 16px;
   }
 
+  .model-work .section-heading {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
 }
 
 @media (max-width: 700px) {
@@ -1723,6 +1909,19 @@ p {
   .internship-detail {
     margin-top: 0;
     padding-left: 56px;
+  }
+
+  .model-family {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .model-family-visual {
+    min-height: 218px;
+  }
+
+  .model-family-body h3 {
+    font-size: 23px;
   }
 
   .about-grid,
