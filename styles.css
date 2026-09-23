@@ -1226,6 +1226,10 @@ p {
   grid-column: span 6;
 }
 
+.interest-games {
+  grid-column: 1 / -1;
+}
+
 .interest-listening {
   grid-column: span 6;
 }
@@ -1255,6 +1259,19 @@ p {
   color: var(--muted);
   font-size: 13.5px;
   line-height: 1.6;
+}
+
+.interest > p:last-child a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.interest > p:last-child a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
 }
 
 .academic-service {
@@ -1938,7 +1955,8 @@ p {
   }
 
   .interest-reading,
-  .interest-watching {
+  .interest-watching,
+  .interest-games {
     grid-column: 1 / -1;
   }
 
